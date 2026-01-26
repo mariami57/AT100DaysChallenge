@@ -1,1 +1,4 @@
-urlpatterns = []
+urlpatterns = [
+    'books/',
+    '<int:pk>/',
+]
