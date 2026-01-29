@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chatbot',
     'rest_framework',
-
+    'drf_spectacular',
 
 ]
 
@@ -125,3 +125,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'AT100DaysChallenge API',
+    'DESCRIPTION': 'A Django-based starter code that processes PDF books, generates embeddings using Cohere, '
+                   'and stores them in Pinecone for intelligent text retrieval RAG) and chat interactions.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
