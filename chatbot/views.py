@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
-from rest_framework.permissions import IsAuthenticated
+
 
 from chatbot.models import Book, BookChunk
 from chatbot.serializers import BookSimpleSerializer, BookChunkSimpleSerializer
@@ -14,7 +14,6 @@ def home(request):
 
 
 class BookViewSet(ReadOnlyModelViewSet):
-    permission_classes = [IsAuthenticated]
     queryset = Book.objects.all()
     serializer_class = BookSimpleSerializer
 
